@@ -1,10 +1,10 @@
 # 1. Aşama: Maven ile derleme
-FROM maven:3.8.6-openjdk-17-slim AS build
+FROM maven:3.8-openjdk-17-slim AS build
 
 # Çalışma dizinini ayarla
 WORKDIR /app
 
-# Pom.xml ve kaynak dosyalarını kopyala
+# Pom.xml ve kaynak dosyaları kopyala
 COPY pom.xml ./
 RUN mvn dependency:go-offline -B
 COPY src ./src
